@@ -53,4 +53,10 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  namespace :admin do
+    resources :auth, only: [:login]
+    get '/login', to: 'auth#login'
+  end
 end
+
