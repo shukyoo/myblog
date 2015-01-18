@@ -48,3 +48,4 @@ gem 'mysql'
 
 gem 'thin'
 
+gem 'devise'
