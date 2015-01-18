@@ -56,7 +56,9 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :auth, only: [:login]
+    root "index#index"
     get '/login', to: 'auth#login'
+    get '/test', to: 'test#index'
   end
 end
 
