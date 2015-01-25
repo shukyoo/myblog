@@ -50,7 +50,6 @@
 <body>
 <div class="container">
 
-  <%= devise_error_messages! %>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "form-signin"}) do |f| %>
 
@@ -70,6 +69,15 @@
       <p>
         <%= f.submit "登录", class: "btn btn-large btn-primary" %>
       </p>
+
+
+      <% unless flash.empty? %>
+          <div style="padding: 10px; color: red;">
+            <% flash.each do |k, v| %>
+                <%= v %>
+            <% end %>
+          </div>
+      <% end %>
 
   <% end %>
 
