@@ -1,4 +1,4 @@
-<%= form_for @article, url: admin_article_path, html:{class:"definewidth m20"} do |f| %>
+<%= form_for [:admin, @article], html:{class:"definewidth m20"} do |f| %>
     <table class="table table-bordered table-hover definewidth m10">
       <tr>
         <td width="10%" class="tableleft">标题</td>

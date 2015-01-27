@@ -61,8 +61,8 @@ Rails.application.routes.draw do
     get '/login', to: 'auth#login'
     get '/test', to: 'test#index'
 
-    resources :article
-    resources :category
+    resources :articles
+    resources :categories
   end
 end
 

@@ -1,4 +1,4 @@
-<%= form_tag admin_article_index_path, class:"form-inline definewidth m20", method:"get" do %>
+<%= form_tag admin_articles_path, class:"form-inline definewidth m20", method:"get" do %>
   关键字：
     <%= text_field_tag :keywords, nil, :class => "abc input-default" %>&nbsp;&nbsp;
     <%= submit_tag "查询", :class => "btn btn-primary" %>&nbsp;&nbsp;
@@ -18,8 +18,8 @@
   <% @articles.each do |article| %>
   <tr>
     <td><%= article.id %></td>
-    <td><%= article.title %>></td>
-    <td><%= article.created_at %>></td>
+    <td><%= article.title %></td>
+    <td><%= article.created_at %></td>
     <td><%= article.updated_at %></td>
     <td>
       <a href="edit.html">编辑</a>
