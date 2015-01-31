@@ -64,5 +64,8 @@ Rails.application.routes.draw do
     resources :articles
     resources :categories
   end
+
+  root "article#index"
+  get '/article/:id', to: 'article#show'
 end
 

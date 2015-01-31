@@ -1,0 +1,37 @@
+<div style="margin:10px 20px;">
+<%= button_tag "新增分类", :type => "button", :class => "btn btn-success", :id => "addnew" %>
+</div>
+
+<table class="table table-bordered table-hover definewidth m10">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>名称</th>
+    <th>创建时间</th>
+    <th>修改时间</th>
+    <th>操作</th>
+  </tr>
+  </thead>
+  <% @categories.each do |category| %>
+  <tr>
+    <td><%= category.id %></td>
+    <td><%= category.name %></td>
+    <td><%= category.created_at %></td>
+    <td><%= category.updated_at %></td>
+    <td>
+      <%= link_to "编辑", edit_admin_category_path(category) %>
+      <%= link_to "删除", admin_category_path(category), method: 'delete', data:{confirm: "确定要删除这个分类吗？"} %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+
+<script>
+
+  $(function(){
+      $("#addnew").click(function(){
+          location.href = "<%= new_admin_category_path %>";
+      });
+  });
+
+</script>
