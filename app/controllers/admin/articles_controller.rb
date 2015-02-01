@@ -1,6 +1,6 @@
 class Admin::ArticlesController < Admin::BaseController
   def index
-    @articles = Article.paginate(:page => params[:page], :per_page => 30)
+    @articles = Article.resent.paginate(:page => params[:page], :per_page => 30)
   end
 
   def new
@@ -31,6 +31,6 @@ class Admin::ArticlesController < Admin::BaseController
   end
 
   def article_params
-    params.require(:article).permit(:title, :content)
+    params.require(:article).permit(:title, :category_id, :content)
   end
 end

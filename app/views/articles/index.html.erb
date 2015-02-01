@@ -1,27 +1,27 @@
+<% @articles.each do |article| %>
 <div class="blog-post">
-<h2 class="blog-post-title">
-    <a href="content.html">Sample blog post</a>
-</h2>
+  <h2 class="blog-post-title">
+    <%= link_to article.title, article_path(article) %>
+  </h2>
 
-<p>This blog post shows a few different types of content that's supported and styled with Bootstrap. Basic typography, images, and code are all supported.</p>
+  <p>
+    <%= article.content %>
+  </p>
 
-<p class="blog-post-meta">2014-12-22</p>
+  <p class="blog-post-meta"><%= article.created_at.strftime "%Y-%m-%d" %></p>
 
-</div><!-- /.blog-post -->
+</div>
+<% end %>
 
-<div class="blog-post">
-<h2 class="blog-post-title">
-    <a href="content.html">Another blog post</a>
-</h2>
-
-<p>Cum sociis natoque penatibus.</p>
-
-<p class="blog-post-meta">2015-01-09</p>
-</div><!-- /.blog-post -->
-
+<% if @articles.next_page %>
 <nav>
-<ul class="pager">
-  <li><a href="#">Previous</a></li>
-  <li><a href="#">Next</a></li>
-</ul>
+  <ul class="pager">
+    <li>
+      <%= link_to "Previous", params.merge(:page => @articles.previous_page) %>
+    </li>
+    <li>
+      <%= link_to "Next", params.merge(:page => @articles.next_page) %>
+    </li>
+  </ul>
 </nav>
+<% end %>

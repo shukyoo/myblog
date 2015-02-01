@@ -7,9 +7,15 @@
         </td>
       </tr>
       <tr>
+        <td width="10%" class="tableleft">分类</td>
+        <td>
+          <%= f.collection_select :category_id, Category.all, :id, :name %>
+        </td>
+      </tr>  
+      <tr>
         <td class="tableleft">内容</td>
         <td>
-          <%= f.text_area :content %>
+          <%= f.text_area :content, :style => "width: 600px; height: 300px;" %>
         </td>
       </tr>
       <tr>

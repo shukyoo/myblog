@@ -10,7 +10,7 @@
     <title>Fredyang's Blog</title>
 
     <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.1/css/bootstrap.min.css">
-    <link href="css/blog.css" rel="stylesheet">
+    <%= stylesheet_link_tag "blog" %>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.js"></script>
@@ -42,22 +42,14 @@
             <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
           </div>
           <div class="sidebar-module">
-            <h4>Archives</h4>
+            <h4>Categories</h4>
             <ol class="list-unstyled">
-              <li><a href="#">March 2014</a></li>
-              <li><a href="#">February 2014</a></li>
-              <li><a href="#">January 2014</a></li>
-              <li><a href="#">December 2013</a></li>
-              <li><a href="#">November 2013</a></li>
-              <li><a href="#">October 2013</a></li>
-              <li><a href="#">September 2013</a></li>
-              <li><a href="#">August 2013</a></li>
-              <li><a href="#">July 2013</a></li>
-              <li><a href="#">June 2013</a></li>
-              <li><a href="#">May 2013</a></li>
-              <li><a href="#">April 2013</a></li>
+	      <% @categories.each do |category| %>
+	      <li><%= link_to category.name, category_path(category) %></li>
+	      <% end %>
             </ol>
           </div>
+<!--
           <div class="sidebar-module">
             <h4>Elsewhere</h4>
             <ol class="list-unstyled">
@@ -66,6 +58,7 @@
               <li><a href="#">Facebook</a></li>
             </ol>
           </div>
+-->
         </div><!-- /.blog-sidebar -->
 
       </div><!-- /.row -->
@@ -73,7 +66,7 @@
     </div><!-- /.container -->
 
     <div class="blog-footer">
-      <p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+      <p>by fredyang</p>
       <p>
         <a href="#">Back to top</a>
       </p>

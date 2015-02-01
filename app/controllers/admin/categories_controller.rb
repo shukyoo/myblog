@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 class Admin::CategoriesController < Admin::BaseController
 
   def index
@@ -26,8 +27,12 @@ class Admin::CategoriesController < Admin::BaseController
 
   def destroy
     @category = Category.find(params[:id])
-    @category.destroy
-    redirect_to admin_categories_path
+    if @category.articles.count > 0
+      redirect_to admin_categories_path, alert: "此分类下还有文章，不能删除"
+    else
+      @category.destroy
+      redirect_to admin_categories_path
+    end
   end
 
   def category_params
