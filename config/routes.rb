@@ -66,6 +66,7 @@ Rails.application.routes.draw do
     post '/user/update_password' => 'users#update_password', as: 'user_update_password'
 
     resources :articles
+    post '/articles/upload' => 'articles#upload', as: 'articles_upload'
     resources :categories
   end
 
