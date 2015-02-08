@@ -27,3 +27,15 @@
       </tr>
     </table>
 <% end %>
+
+
+<script charset="utf-8" src="<%= root_path + 'kindeditor/kindeditor-min.js' %>"></script>
+<script charset="utf-8" src="<%= root_path + 'kindeditor/lang/zh_CN.js' %>"></script>
+<script>
+    KindEditor.ready(function(K) {
+        window.editor = K.create('#article_content', {
+            width: "700px",
+            height: "420px"
+        });
+    });
+</script>
