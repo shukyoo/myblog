@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150125075813) do
+ActiveRecord::Schema.define(version: 20150209130121) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",               limit: 255, default: "", null: false
@@ -32,6 +32,16 @@ ActiveRecord::Schema.define(version: 20150125075813) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["unlock_token"], name: "index_admin_users_on_unlock_token", unique: true, using: :btree
 
+  create_table "article_attachments", force: :cascade do |t|
+    t.integer  "article_id",    limit: 4
+    t.integer  "attachment_id", limit: 4
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  add_index "article_attachments", ["article_id"], name: "index_article_attachments_on_article_id", using: :btree
+  add_index "article_attachments", ["attachment_id"], name: "index_article_attachments_on_attachment_id", using: :btree
+
   create_table "articles", force: :cascade do |t|
     t.integer  "category_id", limit: 4
     t.string   "title",       limit: 255
@@ -42,11 +52,20 @@ ActiveRecord::Schema.define(version: 20150125075813) do
 
   add_index "articles", ["category_id"], name: "index_articles_on_category_id", using: :btree
 
+  create_table "attachments", force: :cascade do |t|
+    t.string   "type",       limit: 255
+    t.string   "file",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
   create_table "categories", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
 
+  add_foreign_key "article_attachments", "articles"
+  add_foreign_key "article_attachments", "attachments"
   add_foreign_key "articles", "categories"
 end

@@ -1,5 +1,5 @@
 class Admin::ArticlesController < Admin::BaseController
-  skip_before_filter :verify_authenticity_token, :only => :upload
+  skip_before_filter :verify_authenticity_token, :only => :upload_image
 
   def index
     @articles = Article.resent.paginate(:page => params[:page], :per_page => 30)
@@ -32,11 +32,21 @@ class Admin::ArticlesController < Admin::BaseController
     redirect_to admin_articles_path
   end
 
-  def upload
-    # my_file = File.open("/tmp/test.png")
-    uploader = ArticleUploader.new
-    uploader.store!(my_file)
-    render json: {error: 1, message: "test"}
+  def upload_image
+    image = Attachment.new({:file => params[:imgFile]})
+    has_one = Attachment.where(:file => image.file.filename).first
+    if has_one.present?
+      path = has_one.file.url
+    else
+      image.save
+      path = image.file.url
+    end
+
+    if path
+      render json: {error: 0, url: path}
+    else
+      render json: {error: 1, message: "upload error"}
+    end
   end
 
   def article_params
