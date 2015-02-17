@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 class Admin::ArticlesController < Admin::BaseController
   skip_before_filter :verify_authenticity_token, :only => :upload_image
 
