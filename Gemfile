@@ -1,5 +1,5 @@
-source 'https://ruby.taobao.org/'
-#source 'http://rubygems.org/'
+#source 'https://ruby.taobao.org/'
+source 'http://rubygems.org/'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
@@ -27,7 +27,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -45,12 +45,13 @@ group :development, :test do
   gem 'capistrano'
   gem 'capistrano-rails'
   gem 'capistrano-passenger'
+  gem 'capistrano-unicorn-nginx'
 end
 
 
 gem 'mysql2'
 
-gem 'thin'
+# gem 'thin'
 
 gem 'devise'
 

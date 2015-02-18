@@ -34,6 +34,16 @@ set :repo_url, 'git@github.com:shukyoo/myblog.git'
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
+# root = "/var/www/myblog/current"
+# set :root,"/var/www/myblog/current"
+# shared = "/var/www/myblog/shared"
+# set :unicorn_pid, "#{shared}/tmp/pids/unicorn_oceaneye.pid"
+# CMD="cd $APP_ROOT; bundle exec unicorn -D -c $APP_ROOT/config/unicorn.rb -E production"
+# set :unicorn_config,"#{root}/config/unicorn.rb"
+
+# production_log = "#{shared}/log/production.log"
+
+
 namespace :deploy do
 
   after :restart, :clear_cache do

@@ -1,0 +1,16 @@
+defaults: &defaults
+  app_name: "myblog"
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
+  unicorn_worker_processes: 5
+
+staging:
+  <<: *defaults
+  unicorn_worker_processes: 2
