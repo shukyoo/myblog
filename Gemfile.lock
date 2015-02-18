@@ -1,5 +1,5 @@
 GEM
-  remote: http://rubygems.org/
+  remote: https://ruby.taobao.org/
   specs:
     actionmailer (4.2.0)
       actionpack (= 4.2.0)
@@ -53,11 +53,14 @@ GEM
     capistrano-bundler (1.1.4)
       capistrano (~> 3.1)
       sshkit (~> 1.2)
-    capistrano-passenger (0.0.2)
-      capistrano (~> 3.0)
+    capistrano-ext (1.2.1)
+      capistrano (>= 1.0.0)
     capistrano-rails (1.1.2)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
+    capistrano-rvm (0.1.2)
+      capistrano (~> 3.0)
+      sshkit (~> 1.2)
     capistrano-stats (1.1.1)
     capistrano-unicorn-nginx (3.3.2)
       capistrano (>= 3.1)
@@ -157,6 +160,7 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    settingslogic (2.0.9)
     slop (3.6.0)
     spring (1.2.0)
     sprockets (2.12.3)
@@ -202,8 +206,10 @@ PLATFORMS
 DEPENDENCIES
   byebug
   capistrano
-  capistrano-passenger
+  capistrano-bundler
+  capistrano-ext
   capistrano-rails
+  capistrano-rvm
   capistrano-unicorn-nginx
   carrierwave
   coffee-rails (~> 4.1.0)
@@ -214,6 +220,7 @@ DEPENDENCIES
   rails (= 4.2.0)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
+  settingslogic
   spring
   sqlite3
   turbolinks

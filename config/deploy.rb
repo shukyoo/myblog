@@ -43,6 +43,8 @@ set :repo_url, 'git@github.com:shukyoo/myblog.git'
 
 # production_log = "#{shared}/log/production.log"
 
+set :linked_files, %w{config/database.yml config/config.yml}
+
 
 namespace :deploy do
 

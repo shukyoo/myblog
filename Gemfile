@@ -1,5 +1,5 @@
-#source 'https://ruby.taobao.org/'
-source 'http://rubygems.org/'
+source 'https://ruby.taobao.org/'
+#source 'http://rubygems.org/'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
@@ -43,8 +43,11 @@ group :development, :test do
   gem 'spring'
 
   gem 'capistrano'
+  gem "capistrano-ext"
   gem 'capistrano-rails'
-  gem 'capistrano-passenger'
+  #gem 'capistrano-passenger'
+  gem 'capistrano-rvm'
+  gem 'capistrano-bundler'
   gem 'capistrano-unicorn-nginx'
 end
 
@@ -58,3 +61,4 @@ gem 'devise'
 gem 'will_paginate', '~> 3.0.6'
 
 gem 'carrierwave'
+gem "settingslogic"
