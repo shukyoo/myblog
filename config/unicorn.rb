@@ -13,11 +13,11 @@ end
 root = "/var/www/myblog/current"
 shared = "/var/www/myblog/shared"
 working_directory root
-pid "#{shared}/tmp/pids/unicorn_oceaneye.pid"
+pid "#{shared}/tmp/pids/unicorn_myblog.pid"
 stderr_path "#{shared}/log/unicorn.log"
 stdout_path "#{shared}/log/unicorn.log"
 
-listen "/tmp/unicorn.oceaneye.sock"
+listen "/tmp/unicorn.myblog.sock"
 
 worker_processes Configuration.unicorn_worker_processes
 
