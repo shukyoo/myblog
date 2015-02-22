@@ -49,6 +49,7 @@ group :development, :test do
   gem 'capistrano-rvm'
   gem 'capistrano-bundler'
   gem 'capistrano-unicorn-nginx'
+  gem 'thin'
 end
 
 

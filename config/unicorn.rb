@@ -17,7 +17,7 @@ pid "#{shared}/tmp/pids/unicorn_myblog.pid"
 stderr_path "#{shared}/log/unicorn.log"
 stdout_path "#{shared}/log/unicorn.log"
 
-listen "/tmp/unicorn.myblog.sock"
+listen "/tmp/unicorn.myblog_production.sock"
 
 worker_processes Configuration.unicorn_worker_processes
 
