@@ -22,7 +22,7 @@
 
     <div class="blog-masthead">
       <div class="container blog-name">
-          Fredyang
+          <a href="/" style="color:#FFF; text-decoration:none;">Fredyang</a>
       </div>
     </div>
 
@@ -38,10 +38,6 @@
 
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
           <div class="sidebar-module sidebar-module-inset">
-            <h4>About</h4>
-            <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-          </div>
-          <div class="sidebar-module">
             <h4>Categories</h4>
             <ol class="list-unstyled">
 	      <% @categories.each do |category| %>
@@ -49,6 +45,14 @@
 	      <% end %>
             </ol>
           </div>
+          <div class="sidebar-module sidebar-module-inset">
+            <h4>About</h4>
+            <p>
+	       <div style="margin-bottom:5px;">编程是一门艺术和哲学，产品也一样；</div>
+	       <div style="margin-bottom:5px;">这个博客是我的第一个RoR作品，从前台到后台，从开发到部署，麻雀虽小五脏俱全，开源地址：<a href="http://git.io/AzK7" target="_blank">http://git.io/AzK7</a></div>
+	       欢迎交流shuky2000#163.com
+	    </p>
+          </div>	  
 <!--
           <div class="sidebar-module">
             <h4>Elsewhere</h4>
@@ -66,10 +70,10 @@
     </div><!-- /.container -->
 
     <div class="blog-footer">
-      <p>by fredyang</p>
       <p>
         <a href="#">Back to top</a>
-      </p>
+      </p>      
+      <p>京ICP备13047626号-4 &copy; 2015 Fredyang</p>
     </div>
 
 

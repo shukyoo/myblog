@@ -3,8 +3,9 @@
  */
 
 body {
-  font-family: Georgia, "Times New Roman", Times, serif;
-  color: #555;
+  /*font-family: Georgia, "Times New Roman", Times, serif;*/
+  font-family: "Microsoft YaHei", Verdana, serif;
+  color: #666;
 }
 
 h1, .h1,
@@ -54,7 +55,7 @@ h6, .h6 {
  */
 
 .blog-main {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.5;
 }
 
@@ -97,7 +98,7 @@ h6, .h6 {
 }
 .blog-post-title {
   margin-bottom: 10px;
-  font-size: 40px;
+  font-size: 32px;
 }
 .blog-post-meta {
   font-size: 14px;

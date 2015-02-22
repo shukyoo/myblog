@@ -5,7 +5,7 @@
   </h2>
 
   <p>
-    <%= article.content.html_safe %>
+    <%= plaintext_summary article.content %>
   </p>
 
   <p class="blog-post-meta"><%= article.created_at.strftime "%Y-%m-%d" %></p>
