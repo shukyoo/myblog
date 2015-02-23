@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150209130121) do
+ActiveRecord::Schema.define(version: 20150223032642) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",               limit: 255, default: "", null: false
@@ -43,11 +43,12 @@ ActiveRecord::Schema.define(version: 20150209130121) do
   add_index "article_attachments", ["attachment_id"], name: "index_article_attachments_on_attachment_id", using: :btree
 
   create_table "articles", force: :cascade do |t|
-    t.integer  "category_id", limit: 4
-    t.string   "title",       limit: 255
-    t.text     "content",     limit: 65535
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.integer  "category_id",    limit: 4
+    t.string   "title",          limit: 255
+    t.text     "content",        limit: 65535
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.integer  "summary_length", limit: 4
   end
 
   add_index "articles", ["category_id"], name: "index_articles_on_category_id", using: :btree
