@@ -32,7 +32,7 @@ set :repo_url, 'git@github.com:shukyoo/myblog.git'
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
 # Default value for keep_releases is 5
-# set :keep_releases, 5
+set :keep_releases, 3
 
 # root = "/var/www/myblog/current"
 # set :root,"/var/www/myblog/current"
@@ -55,6 +55,14 @@ namespace :deploy do
       # within release_path do
       #   execute :rake, 'cache:clear'
       # end
+    end
+  end
+
+  after :finishing, 'deploy:cleanup'
+
+  after :finished, :restart_unicorn do
+    on roles(:app), in: :sequence, wait: 20 do
+      execute "sudo service unicorn_myblog_production restart"
     end
   end
 
