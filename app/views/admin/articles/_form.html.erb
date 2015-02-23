@@ -9,7 +9,7 @@
       <tr>
         <td width="10%" class="tableleft">分类</td>
         <td>
-          <%= f.collection_select :category_id, Category.all, :id, :name %>
+          <%= f.collection_select :category_id, Category.order('position asc').all, :id, :name %>
         </td>
       </tr>
       <tr>

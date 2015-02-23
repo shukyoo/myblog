@@ -2,7 +2,7 @@
 class Admin::CategoriesController < Admin::BaseController
 
   def index
-    @categories = Category.all
+    @categories = Category.order('position asc').all
   end
 
   def new
@@ -36,6 +36,6 @@ class Admin::CategoriesController < Admin::BaseController
   end
 
   def category_params
-    params.require(:category).permit(:name)
+    params.require(:category).permit(:name, :position)
   end
 end
