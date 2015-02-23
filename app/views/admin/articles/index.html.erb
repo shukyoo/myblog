@@ -21,8 +21,8 @@
     <td><%= article.id %></td>
     <td><%= article.title %></td>
     <td><%= article.category.name %></td>
-    <td><%= article.created_at %></td>
-    <td><%= article.updated_at %></td>
+    <td><%= article.created_at.localtime.strftime "%Y-%m-%d %H:%M:%S" %></td>
+    <td><%= article.updated_at.localtime.strftime "%Y-%m-%d %H:%M:%S" %></td>
     <td>
       <%= link_to "编辑", edit_admin_article_path(article) %>
       <%= link_to "删除", admin_article_path(article), method: 'delete', data:{confirm: "确定要删除这篇文章吗？"} %>
