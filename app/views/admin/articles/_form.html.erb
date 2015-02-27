@@ -40,6 +40,7 @@
 <script>
     KindEditor.ready(function(K) {
         window.editor = K.create('#article_content', {
+            cssPath : ['<%= stylesheet_path "prettify" %>', '<%= stylesheet_path "kindeditor" %>'],
             width: "700px",
             height: "420px",
             uploadJson: "<%= admin_articles_upload_image_path %>"
