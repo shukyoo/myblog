@@ -8,6 +8,7 @@ class Admin::ArticlesController < Admin::BaseController
 
   def new
     @article = Article.new
+    @article.summary_length = 280
   end
 
   def edit
