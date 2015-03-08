@@ -1,8 +1,10 @@
 <% content_for :meta do%>
 <% if defined? @category%>
+<title><%= @category.name %> - FREDYANG的博客</title>
 <meta name="keywords" content="<%= @category.name %> - FREDYANG的博客">
 <meta name="description" content="关于<%= @category.name %>的文章">
 <% else %>
+<title>FREDYANG的博客</title>
 <meta name="keywords" content="FREDYANG的博客">
 <meta name="description" content="关于互联网、产品、开发和相关思想的记录">
 <% end %>
