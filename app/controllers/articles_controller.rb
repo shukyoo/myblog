@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-class ArticlesController < ApplicationController
+class ArticlesController < BaseController
 
   before_action :fetch_categories
 
