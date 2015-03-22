@@ -73,6 +73,7 @@ Rails.application.routes.draw do
   root "articles#index"
   get '/categories/:id', to: 'articles#category', as: 'category'
   get '/articles/:id', to: 'articles#show', as: 'article'
-  get '/rss', to: 'articles#index'
+  get 'rss', to: 'articles#feed'
+  get 'feed', to: 'articles#feed'
 end
 

@@ -9,10 +9,14 @@ class ArticlesController < BaseController
   
   def index
     @articles = Article.resent.paginate(:page => params[:page], :per_page => 12)
-    respond_to do |format|
-      format.html
-      format.rss { render :layout => false }
-    end
+  end
+
+  def feed
+    @articles = Article.resent.limit(20)
+    render :template => 'articles/feed.rss.builder', :layout => false
+    # respond_to do |format|
+    #  format.rss { render :layout => false }
+    # end
   end
 
   def category
