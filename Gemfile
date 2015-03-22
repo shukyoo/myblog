@@ -64,3 +64,4 @@ gem 'will_paginate', '~> 3.0.6'
 gem 'carrierwave'
 gem "settingslogic"
 gem 'sitemap_generator'
+gem 'whenever', :require => false
