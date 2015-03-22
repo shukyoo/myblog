@@ -71,7 +71,7 @@ Rails.application.routes.draw do
   end
 
   root "articles#index"
-  get '/category/:id', to: 'articles#category', as: 'category'
-  get '/article/:id', to: 'articles#show', as: 'article'
+  get '/categories/:id', to: 'articles#category', as: 'category'
+  get '/articles/:id', to: 'articles#show', as: 'article'
 end
 
