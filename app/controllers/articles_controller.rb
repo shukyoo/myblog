@@ -9,6 +9,10 @@ class ArticlesController < BaseController
   
   def index
     @articles = Article.resent.paginate(:page => params[:page], :per_page => 12)
+    respond_to do |format|
+      format.html
+      format.rss { render :layout => false }
+    end
   end
 
   def category
@@ -24,4 +28,5 @@ class ArticlesController < BaseController
   def show
     @article = Article.find(params[:id])
   end
+
 end
