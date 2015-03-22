@@ -1,6 +1,7 @@
 # config valid only for current version of Capistrano
 lock '3.3.5'
 
+
 set :application, 'myblog'
 set :repo_url, 'git@github.com:shukyoo/myblog.git'
 
@@ -43,7 +44,7 @@ set :keep_releases, 3
 
 # production_log = "#{shared}/log/production.log"
 
-set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/uploads public/assets }
+set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/uploads public/assets public/shared }
 set :linked_files, %w{config/database.yml config/config.yml}
 
 
@@ -67,3 +68,5 @@ namespace :deploy do
   end
 
 end
+
+set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
