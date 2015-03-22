@@ -163,6 +163,8 @@ GEM
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
     settingslogic (2.0.9)
+    sitemap_generator (5.0.5)
+      builder
     slop (3.6.0)
     spring (1.2.0)
     sprockets (2.12.3)
@@ -227,6 +229,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   settingslogic
+  sitemap_generator
   spring
   sqlite3
   thin
