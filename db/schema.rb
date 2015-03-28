@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150223064324) do
+ActiveRecord::Schema.define(version: 20150328094851) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",               limit: 255, default: "", null: false
@@ -67,7 +67,22 @@ ActiveRecord::Schema.define(version: 20150223064324) do
     t.integer  "position",   limit: 4
   end
 
+  create_table "drafts", force: :cascade do |t|
+    t.integer  "article_id",     limit: 4
+    t.integer  "category_id",    limit: 4
+    t.string   "title",          limit: 255
+    t.text     "content",        limit: 65535
+    t.integer  "summary_length", limit: 4
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
+
+  add_index "drafts", ["article_id"], name: "index_drafts_on_article_id", using: :btree
+  add_index "drafts", ["category_id"], name: "index_drafts_on_category_id", using: :btree
+
   add_foreign_key "article_attachments", "articles"
   add_foreign_key "article_attachments", "attachments"
   add_foreign_key "articles", "categories"
+  add_foreign_key "drafts", "articles"
+  add_foreign_key "drafts", "categories"
 end
