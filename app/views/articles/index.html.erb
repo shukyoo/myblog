@@ -29,15 +29,20 @@
 </div>
 <% end %>
 
-<% if @articles.next_page %>
+<% if @articles.total_pages > 1 %>
 <nav>
   <ul class="pager">
+    <% if @articles.previous_page %>
     <li>
-      <%= link_to "Previous", params.merge(:page => @articles.previous_page) %>
+      <%= link_to "Previous Page", params.merge(:page => @articles.previous_page) %>
     </li>
+    <% end %>
+
+    <% if @articles.next_page %>
     <li>
-      <%= link_to "Next", params.merge(:page => @articles.next_page) %>
+      <%= link_to "Next Page", params.merge(:page => @articles.next_page) %>
     </li>
+    <% end %>
   </ul>
 </nav>
 <% end %>
