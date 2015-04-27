@@ -40,15 +40,16 @@
           <div class="sidebar-module sidebar-module-inset">
             <h4>Categories</h4>
             <ol class="list-unstyled">
+              <li<%= sanitize current_category(@category) %>><%= link_to "全部", root_path%></li>
 	      <% @categories.each do |category| %>
-	      <li><%= link_to category.name, category_path(category) %></li>
+	      <li<%= sanitize current_category(@category, category.id) %>><%= link_to category.name, category_path(category) %></li>
 	      <% end %>
             </ol>
           </div>
           <div class="sidebar-module sidebar-module-inset">
             <h4>About</h4>
             <p>
-	       <div style="margin-bottom:6px;">简单的RoR博客，从前台到后台，从开发到部署，麻雀虽小五脏俱全，开源地址：<a href="http://git.io/AzK7" target="_blank">http://git.io/AzK7</a></div>
+	       <div style="margin-bottom:6px;">FREDYANG，项目经理、产品经理、PHP工程师、Ruby工程师，热爱开发，热爱互联网；<br />Email: shuky2000#163.com<br /><br />此博客使用Ruby on Rails开发，从前台到后台，从开发到部署，麻雀虽小五脏俱全，开源地址：<a href="http://git.io/AzK7" target="_blank">http://git.io/AzK7</a></div>
 	       <ul>
 		 <li>Framework：Ruby on Rails</li>
 		 <li>Frontend：Bootstrap</li>
@@ -56,7 +57,6 @@
 		 <li>IDE: Emacs</li>
 		 <li>ENV: Centos6 + Nginx</li>
 	       </ul>
-	       欢迎交流shuky2000#163.com
 	    </p>
           </div>	  
 <!--
